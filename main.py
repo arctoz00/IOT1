@@ -26,7 +26,6 @@ gps = GPS_Minimum(uart)                    # GPS object creation
 # OBJECTS til Buzzer
 BUZZ_PIN = 25
 buzzer = PWM(Pin(BUZZ_PIN, Pin.OUT))
-buzzer.duty(0)
 #########################################################################
 #LED objekt
 GREEN_PIN = 23
@@ -34,12 +33,11 @@ GREEN_PIN = 23
 # kode som er udenfor loop 
 led1 = Pin(GREEN_PIN, Pin.OUT)
 led1.on()
-
+buzzer.duty(0)
 buzzer.duty(512)
 buzzer.freq(440)
 sleep(5)
 buzzer.duty(0)
-
 ########################################################################
 def get_adafruit_gps():
     speed = lat = lon = None
